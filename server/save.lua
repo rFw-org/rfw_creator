@@ -1,4 +1,5 @@
 RegisterNetEvent("creator:SaveSkin")
-AddEventHandler("creator:SaveSkin", function(skin)
+AddEventHandler("creator:SaveSkin", function(skin, identity)
     exports.rFw:SavePlayerSkin(source, skin)
+    exports.rFw:SavePlayerIdentity(source, identity.firstname, identity.lastname, identity.dateofbirth, identity.height)
 end)

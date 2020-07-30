@@ -75,10 +75,10 @@ function RageUI.Item.Button(Label, Description, Style, Enabled, Action, Submenu)
             if Enabled then
                 local Hovered = CurrentMenu.EnableMouse and (CurrentMenu.CursorStyle == 0 or CurrentMenu.CursorStyle == 1) and RageUI.ItemsMouseBounds(CurrentMenu, Active, Option + 1, SettingsButton);
                 local Selected = (CurrentMenu.Controls.Select.Active or (Hovered and CurrentMenu.Controls.Click.Active)) and Active
-                if (Action.onHovered ~= nil) then
+                if (Action.onHovered ~= nil) and Hovered then
                     Action.onHovered();
                 end
-                if (Action.onActive ~= nil) then
+                if (Action.onActive ~= nil) and Active then
                     Action.onActive();
                 end
                 if Selected then
